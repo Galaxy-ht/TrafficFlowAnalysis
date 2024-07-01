@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.egon.analysis.mappers.MonitorInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.egon.analysis.entity.po.MonitorInfo">
+            <id property="monitorId" column="monitor_id" jdbcType="INTEGER"/>
+            <result property="roadId" column="road_id" jdbcType="INTEGER"/>
+            <result property="speedLimit" column="speed_limit" jdbcType="INTEGER"/>
+            <result property="areaId" column="area_id" jdbcType="VARCHAR"/>
+            <result property="theGeom" column="the_geom" jdbcType="OTHER"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        monitor_id,road_id,speed_limit,
+        area_id,the_geom,name
+    </sql>
+</mapper>

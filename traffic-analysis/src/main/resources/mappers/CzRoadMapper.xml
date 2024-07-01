@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.egon.analysis.mappers.CzRoadMapper">
+
+    <resultMap id="BaseResultMap" type="com.egon.analysis.entity.po.CzRoad">
+            <id property="id" column="ID" jdbcType="INTEGER"/>
+            <result property="osmId" column="osm_id" jdbcType="VARCHAR"/>
+            <result property="code" column="code" jdbcType="INTEGER"/>
+            <result property="fclass" column="fclass" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="ref" column="ref" jdbcType="VARCHAR"/>
+            <result property="oneway" column="oneway" jdbcType="VARCHAR"/>
+            <result property="maxspeed" column="maxspeed" jdbcType="INTEGER"/>
+            <result property="layer" column="layer" jdbcType="BIGINT"/>
+            <result property="bridge" column="bridge" jdbcType="VARCHAR"/>
+            <result property="tunnel" column="tunnel" jdbcType="VARCHAR"/>
+            <result property="theGeom" column="the_geom" jdbcType="OTHER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,osm_id,code,
+        fclass,name,ref,
+        oneway,maxspeed,layer,
+        bridge,tunnel,the_geom
+    </sql>
+    <insert id="insertMonitor">
+        INSERT INTO t_monitor_info (road_id, speed_limit, area_id, the_geom) VALUES (#{arg0}, #{arg1}, #{arg2}, ST_GeomFromText(${arg3}));
+    </insert>
+</mapper>

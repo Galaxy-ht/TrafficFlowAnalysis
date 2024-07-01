@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.egon.analysis.mappers.AverageSpeedMapper">
+
+    <resultMap id="BaseResultMap" type="com.egon.analysis.entity.po.AverageSpeed">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="startTime" column="start_time" jdbcType="BIGINT"/>
+            <result property="endTime" column="end_time" jdbcType="BIGINT"/>
+            <result property="monitorId" column="monitor_id" jdbcType="VARCHAR"/>
+            <result property="avgSpeed" column="avg_speed" jdbcType="DOUBLE"/>
+            <result property="carCount" column="car_count" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,start_time,end_time,
+        monitor_id,avg_speed,car_count
+    </sql>
+</mapper>

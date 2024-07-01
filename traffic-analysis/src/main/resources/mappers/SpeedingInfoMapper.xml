@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.egon.analysis.mappers.SpeedingInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.egon.analysis.entity.po.SpeedingInfo">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="car" column="car" jdbcType="VARCHAR"/>
+            <result property="monitorId" column="monitor_id" jdbcType="VARCHAR"/>
+            <result property="roadId" column="road_id" jdbcType="VARCHAR"/>
+            <result property="realSpeed" column="real_speed" jdbcType="DOUBLE"/>
+            <result property="limitSpeed" column="limit_speed" jdbcType="INTEGER"/>
+            <result property="actionTime" column="action_time" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,car,monitor_id,
+        road_id,real_speed,limit_speed,
+        action_time
+    </sql>
+</mapper>
